@@ -1,2 +1,2 @@
 # LearningTutorial_1
-I gonna try the tutorial codes to improve my files
+I gonna try the tutorial codes to improve my skills
