@@ -1,0 +1,58 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void main()
+{
+        int x,y;
+        char ch[2];
+        scanf("%d %s %d",&x,ch,&y);
+		int row=x>y?x:y;
+		int col=x+y;
+		col=col-1;
+		int aRow=row-x;
+		int bRow=row-y;
+		int as=0,bIndex=col-1;
+		for(int i=0;i<row-1;i++){
+		    for(int j=0;j<col;j++){
+		        if(aRow==i){
+		            if(as==j){
+		                printf("%c",ch[0]);
+		                as++;
+		                aRow++;
+		            }
+		            else{
+		                if(aRow<row){
+		                printf("-");
+		                }
+		            }
+		        }else if(bRow==i){
+		            if(bIndex==j){
+		                printf("%c",ch[0]);
+		                bIndex--;
+		                bRow++;
+		            }else{
+		                if(bRow<row){
+		                printf("-");
+		                }
+		            }
+		        }
+		    }
+		    printf("\n");
+		   
+		}
+		for(int i=0;i<x;i++){
+		    if(i==x-1){
+		        printf("%c",ch[0]);
+		    }else{
+		        printf("-");
+		    }
+		}
+
+}
