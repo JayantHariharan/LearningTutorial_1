@@ -1,0 +1,50 @@
+C code
+
+#include <stdio.h>
+#include<math.h>
+void main()
+{
+    int sen;
+    scanf("%d",&sen);
+    int temp=sen;
+    int sen1,count=0;
+    while(temp!=0){
+        sen1=(sen1*10)+(temp%10);
+        temp/=10;
+        count++;
+    }
+    count-=1;
+    while(count>=0){
+        int digit=pow(10,count);
+        int num=sen1%10;
+        printf("%d ",num*digit);
+        count--;
+        sen1/=10;
+    }
+    
+}
+
+Java Code:
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int sen=sc.nextInt();
+    int temp=sen;
+    int sen1,count=0;
+    while(temp!=0){
+        sen1=(sen1*10)+(temp%10);
+        temp/=10;
+        count++;
+    }
+    count-=1;
+    while(count>=0){
+        int digit=Math.pow(10,count);
+        int num=sen1%10;
+        System.out.print(num*digit+" ");
+        count--;
+        sen1/=10;
+    }
+	}
+}
