@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void main()
+{
+    int num;
+    scanf("%d",&num);
+    int arr[num];
+    for(int i=0;i<num;i++){
+        scanf("%d",&arr[i]);
+    }
+    int f,l;
+    for(int i=0;i<num;i++){
+        int temp=arr[i];
+        int count=0;
+        while(temp!=0){
+            if(count==0){
+                l=temp%10;
+            }else if(temp/10==0){
+                f=temp;
+            }
+                temp/=10;
+                count++;
+        }
+        if(f==l){
+            printf("%d ",arr[i]);
+        }
+    }
+}
