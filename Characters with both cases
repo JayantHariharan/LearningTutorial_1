@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include<string.h>
+void main()
+{
+    char sen[]="aeroRadeOnoWe";
+    for(int i=0;i<strlen(sen);i++){
+        if(sen[i]>='a'&&sen[i]<='z'){
+            char temp=sen[i]-32;
+            for(int j=0;j<strlen(sen);j++){
+                if(temp==sen[j]){
+                    printf("%c",sen[i]);
+                    break;
+                }
+            }
+        }else{
+            char temp=sen[i]+32;
+            for(int j=0;j<strlen(sen);j++){
+                if(temp==sen[j]){
+                    printf("%c",sen[i]);
+                    break;
+                }
+            }
+        }
+    }
+}
