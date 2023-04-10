@@ -1,0 +1,37 @@
+row = 0
+col = 0
+
+def validate(arr, i, j, key):
+    start = j - 1 if j > 0 else j
+    end = j + 1 if j < col - 1 else j
+    for x in range(start, end + 1):
+        if key <= arr[i][x]:
+            return False
+    return True
+
+if __name__ == '__main__':
+    row, col = map(int, input().split())
+    arr = []
+    for i in range(row):
+        arr.append(list(map(int, input().split())))
+    count = 0
+    key = 0
+    check = True
+    for i in range(row):
+        for j in range(col):
+            check = True
+            key = arr[i][j]
+            if check and i - 1 >= 0:
+                check = validate(arr, i - 1, j, key)
+            if check and i + 1 < row:
+                check = validate(arr, i + 1, j, key)
+            if check:
+                start = j - 1 if j > 0 else j
+                end = j + 1 if j < col - 1 else j
+                for x in range(start, end + 1):
+                    if j != x and arr[i][x] >= key:
+                        check = False
+                        break
+            if check:
+                count += 1
+    print(count)
