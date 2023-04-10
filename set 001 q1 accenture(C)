@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include<stdbool.h>
+int row=0;
+int col=0;
+
+bool validate(int arr[row][col],int i,int j,int key){
+    int start=j-1==-1?j:j-1;
+    int end=j+1==col?j:j+1;
+    for(;start<=end;start++){
+        if(key<=arr[i][start]){
+            return false;
+        }
+    }
+    return true;
+}
+void main()
+{
+    scanf("%d %d",&row,&col);
+    int arr[row][col];
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    int count=0,key=0;
+    bool check=true;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            check=true;
+            key=arr[i][j];
+            if(check==true && i-1>=0){
+                check=validate(arr,i-1,j,key);
+            }
+            if(check==true && i+1<row){
+                check=validate(arr,i+1,j,key);
+            }
+            if(check==true){
+                int start=j-1==-1?j:j-1;
+                int end=j+1==col?j:j+1;
+                for(;start<=end;start++){
+                    if(j!=start){
+                        if(arr[i][start]>=key){
+                            check=false;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(check==true){
+                count++;
+            }
+        }
+    }
+    printf("%d",count);
+}
