@@ -1,0 +1,25 @@
+int findSequence(int size, int *arr)
+{
+    
+    
+    int i=1,sum1=0,sum2=0;
+
+		if(size<3){
+				return -1;
+		}else{
+		while(i<size){
+			if(arr[i-1]<arr[i]){
+					sum1+=arr[i-1];
+					i++;
+			}else{
+					sum1+=arr[i-1];
+					break;
+			}
+		}
+		i--;
+		while(i<size){
+			sum2+=arr[i];
+		}
+	}
+   return sum1*sum2; 
+}
