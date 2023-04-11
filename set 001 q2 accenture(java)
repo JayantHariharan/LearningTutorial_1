@@ -1,0 +1,19 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		String sarr[]=sc.nextLine().split(" ");
+		int count=sarr.length;
+		for(int i=0;i<sarr.length;i++){
+		    for(int j=i+1;j<sarr.length;j++){
+		        if(sarr[i].equals(sarr[j])){
+		            count++;
+		        }
+		    }
+		}
+		System.out.print(count);
+
+	}
+}
