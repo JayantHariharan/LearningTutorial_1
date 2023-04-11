@@ -1,0 +1,8 @@
+sarr=input().split()
+count=len(sarr)
+for i in range(len(sarr)):
+    for j in range(i+1,len(sarr)):
+        if sarr[i]==sarr[j]:
+            count+=1
+    
+print(count)
