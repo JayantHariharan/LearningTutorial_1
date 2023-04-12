@@ -1,0 +1,22 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		    if (4000<num && num<=7000){
+		        System.out.print(45);
+		    }else if(num>7000){
+		        System.out.print("OVERLOADED");
+		    }else if(1<=num && num<=2000){
+		        System.out.print(25);
+		    }else if(num>=2001 && num<=4000){
+		        System.out.print(35);
+		    }else if(num==0){
+		        System.out.print(0);
+            }else{
+                System.out.print("INVALID INPUT");
+            }
+	}
+}
