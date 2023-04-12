@@ -1,0 +1,13 @@
+num=int(input())
+if 4000<num and num<=7000:
+		        print(45)
+elif num>7000:
+		       print("OVERLOADED")
+elif 1<=num and num<=2000:
+		        print(25)
+elif num>=2001 and num<=4000:
+		        print(35)
+elif num==0:
+		        print(0);
+else:
+                print("INVALID INPUT")
