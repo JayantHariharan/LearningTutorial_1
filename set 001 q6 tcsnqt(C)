@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void main()
+{
+            int num;
+            scanf("%d",&num);
+		    if (4000<num && num<=7000){
+		        printf("%d",45);
+		    }else if(num>7000){
+		        printf("OVERLOADED");
+		    }else if(1<=num && num<=2000){
+		        printf("%d",25);
+		    }else if(num>=2001 && num<=4000){
+		        printf("%d",35);
+		    }else if(num==0){
+		        printf("%d",0);
+            }else{
+                printf("INVALID INPUT");
+            }
+}
