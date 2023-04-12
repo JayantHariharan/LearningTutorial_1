@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int countHardPrograms(int N, int arr*, int K) {
+    int count = 0, page = 1;
+    
+    
+    for(int i=0;i<N;i++){
+        for(int j=1;j<=arr[i];j++){
+            if(page==j){
+                printf("%d %d\n",page,arr[i]);
+                count++;
+            }
+            if(j%K==0){
+                page++;
+            }
+            
+        }
+       if(arr[i]%K!=0){
+        page++;
+        }
+    }
+    return count;
+    }
+
+
