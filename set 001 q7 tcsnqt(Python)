@@ -1,0 +1,36 @@
+def customCaesarCipher(key, message):
+    ualpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    res = ""
+    digit = "0123456789"
+    pos = 0
+    temp = 0
+    if key < 0:
+        return "INVALID INPUT"
+    else:
+        for i in range(len(message)):
+            temp = key
+            if message[i].isupper():
+                temp %= 26
+                pos = ualpha.index(message[i])
+                pos += temp
+                if pos >= 26:
+                    pos -= 26
+                res += ualpha[pos]
+            elif message[i].islower():
+                temp %= 26
+                pos = ualpha.index(message[i].upper())
+                pos += temp
+                if pos >= 26:
+                    pos -= 26
+                res += ualpha[pos].lower()
+            elif message[i].isdigit():
+                temp %= 10
+                pos = digit.index(message[i])
+                pos += temp
+                if pos >= 10:
+                    pos -= 10
+                res += digit[pos]
+            else:
+                res += message[i]
+    return res
+
