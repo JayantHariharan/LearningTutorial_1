@@ -1,6 +1,6 @@
-#include <stdio.h>
 
-int countHardPrograms(int N, int arr*, int K) {
+
+int countHardPrograms(int N, int *arr, int K) {
     int count = 0, page = 1;
     
     
