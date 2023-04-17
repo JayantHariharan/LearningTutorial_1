@@ -1,0 +1,43 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		int size=sc.nextInt();
+		sc.nextLine();
+		List<String>register=new ArrayList<String>();
+		for(int i=0;i<size;i++){
+		    register.add(sc.next());
+		}
+		sc.nextLine();
+		int total=sc.nextInt();
+		sc.nextLine();
+		int query=sc.nextInt();
+		sc.nextLine();
+		for(int i=0;i<query;i++){
+		    String sarr[]=sc.nextLine().split(" ");
+		    if(sarr[0].equals("1")){
+		        if(size<total){
+		            register.add(sarr[1]);
+		            size++;
+		            System.out.println("Car parked at position: "+size);
+		        }else{
+		            System.out.println("No space for parking");
+		        }
+		    }else if(sarr[0].equals("2")){
+		        if(register.contains(sarr[1])){
+		            int temp=register.indexOf(sarr[1]);
+		            temp++;
+		            System.out.println("Car position: "+temp);
+		        }else{
+		            System.out.println("Car does not exists");
+		        }
+		    }else{
+		        System.out.println("Invalid");
+		    }
+		    
+		}
+
+	}
+}
