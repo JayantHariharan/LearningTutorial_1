@@ -1,0 +1,33 @@
+
+import sys
+
+size = int(input())
+register = []
+
+for i in range(size):
+    register.append(input())
+
+total = int(input())
+query = int(input())
+
+for i in range(query):
+    sarr = input().split()
+
+    if sarr[0] == "1":
+        if size < total:
+            register.append(sarr[1])
+            size += 1
+            print("Car parked at position:", size)
+        else:
+            print("No space for parking")
+
+    elif sarr[0] == "2":
+        if sarr[1] in register:
+            temp = register.index(sarr[1])
+            temp += 1
+            print("Car position:", temp)
+        else:
+            print("Car does not exists")
+
+    else:
+        print("Invalid")
