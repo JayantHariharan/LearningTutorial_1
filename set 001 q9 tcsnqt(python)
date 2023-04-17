@@ -1,18 +1,9 @@
-
-import sys
-
 size = int(input())
-register = []
-
-for i in range(size):
-    register.append(input())
-
+register = input().split()
 total = int(input())
 query = int(input())
-
 for i in range(query):
     sarr = input().split()
-
     if sarr[0] == "1":
         if size < total:
             register.append(sarr[1])
