@@ -1,0 +1,20 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		
+		int count=0;
+		while(true){
+		    String sen=sc.next();
+		    if(sen.equals("q") || sen.equals("Q")){
+		        break;
+		    }else if(!sen.matches("^[0-9]{10}$")){
+		            count++;
+		        }
+		    }
+		System.out.print(count);
+
+	}
+}
