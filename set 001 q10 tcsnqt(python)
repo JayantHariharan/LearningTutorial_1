@@ -1,0 +1,10 @@
+count = 0
+
+while True:
+    sen = input()
+    if sen.lower() == 'q':
+        break
+    elif not sen.isnumeric() or len(sen) != 10:
+        count += 1
+
+print(count)
