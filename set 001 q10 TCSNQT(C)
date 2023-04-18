@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+
+void main() {
+    char sen[20];
+    int count = 0;
+
+    while(1) {
+        scanf("%s", sen);
+        if(strcmp(sen, "q") == 0 || strcmp(sen, "Q") == 0) {
+            break;
+        }
+        else if(strlen(sen) != 10) {
+            count++;
+        }else{
+            for(int i=0;i<strlen(sen);i++){
+                if(!(sen[i]>='0' && sen[i]<='9')){
+                    count++;
+                    break;
+                }
+            }
+        }
+    }
+    printf("%d", count);
+
+}
