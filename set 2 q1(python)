@@ -1,0 +1,13 @@
+sarr = input().split()
+for i in range(4):
+    min_val = 10
+    max_val = 0
+    for s in sarr:
+        t = int(s[i])
+        if i % 2 == 0:
+            if t < min_val:
+                min_val = t
+        else:
+            if t > max_val:
+                max_val = t
+    print(min_val if i % 2 == 0 else max_val, end='')
