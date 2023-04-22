@@ -1,0 +1,17 @@
+sen = input()
+an = 0
+sum = 0
+
+for i in range(len(sen)):
+    an += int(sen[i]) ** len(sen)
+
+for i in range(len(sen)):
+    num = int(sen[i])
+    if an == int(sen):
+        if num % 2 == 0:
+            sum += num
+    else:
+        if num % 2 != 0:
+            sum += num
+
+print(sum)
