@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main {
+    public static String check(String sen){
+        String res="";
+        for(int i=1;i<sen.length();i+=2){
+		    res+=sen.charAt(i)+""+sen.charAt(i-1)+"";
+		}
+		if(sen.length()%2!=0){
+		    res+=sen.charAt(sen.length()-1);
+		}
+		return res;
+    }
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		String sarr[]=sc.nextLine().split(" ");
+		String res1="",res2="";
+		int num1=0,num2=0;
+		res1=check(sarr[0]);
+		res2=check(sarr[1]);
+		num1=Math.abs(Integer.parseInt(res1));
+		num2=Math.abs(Integer.parseInt(res2));
+		System.out.print(num1+num2);
+
+	}
+}
