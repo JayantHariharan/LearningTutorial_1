@@ -1,0 +1,22 @@
+
+#include <stdio.h>
+#include<string.h>
+void main()
+{
+        char sen[1000];
+        scanf("%s",sen);
+		int flag=0,count=0;
+		for(int i=0;i<strlen(sen);i++){
+		    flag=0;
+		    for(int j=0;j<strlen(sen);j++){
+		        if(i!=j && sen[i]==sen[j]){
+		            flag=1;
+		            break;
+		        }
+		    }
+		    if(flag==0){
+		        count++;
+		    }
+		}
+		printf("%d",count);
+}
