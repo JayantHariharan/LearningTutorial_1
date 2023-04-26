@@ -1,0 +1,12 @@
+sen=input()
+flag=0
+count=0
+for i in range(len(sen)):
+    flag=0
+    for j in range(len(sen)):
+        if i!=j and sen[i]==sen[j]:
+            flag=1
+            break
+    if flag==0:
+        count+=1
+print(count)
