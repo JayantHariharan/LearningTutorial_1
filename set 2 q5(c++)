@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+        string sen;
+        cin>>sen;
+		int sum=0,flag=0;
+		for(int i=0;i<sen.length();i++){
+		    int temp=sen[i]-'0';
+		    if(temp==0 || temp==1){
+		        flag=1;
+		        sum+=temp;
+		    }else{
+		        for(int j=2;j<temp;j++){
+		            if(temp%j==0){
+		                flag=1;
+		                sum+=temp;
+		                break;
+		            }
+		        }
+		    }
+		}
+		cout<<((flag==1)?sum:-1);
+}
