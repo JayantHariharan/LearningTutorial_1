@@ -36,3 +36,46 @@ public class Hello {
 
 	}
 }
+
+
+/// correct code with not considered the location
+
+import java.util.*;
+public class GFG {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		sc.nextLine();
+		Map<String,Double>map=new LinkedHashMap<String,Double>();
+		do{
+		    String temp=sc.nextLine();
+		    if(temp.equals("q") || temp.equals("Q")){
+		        break;
+		    }else{
+		        String sarr[]=temp.split(" ");
+		        map.put(sarr[0],Double.parseDouble(sarr[1]));
+		        
+		    } 
+		}while(true);
+		List<Double>height=new ArrayList<Double>(map.values());
+		Collections.sort(height,Collections.reverseOrder());
+		Iterator<Map.Entry<String,Double>>iterator=map.entrySet().iterator();
+		while(iterator.hasNext()){
+		    Map.Entry<String,Double>entry=iterator.next();
+		    String key=entry.getKey();
+		    Double value=entry.getValue();
+		    for(int i=0;i<num;i++){
+		        if(Double.compare(value,height.get(i))==0){
+		            System.out.println(key);
+		            height.set(i,0.0);
+		            iterator.remove();
+		            break;
+		        }
+		    }
+		}
+		
+
+	}
+}
